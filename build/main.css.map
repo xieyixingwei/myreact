@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/react-redux/App.css","webpack:///App.css"],"names":[],"mappings":"AAAA;EACI;EACA;ACCJ","file":"main.css","sourcesContent":[".app {\n    color: red;\n    font-size: 18px;\n}\n",".app {\n  color: red;\n  font-size: 18px;\n}\n"],"sourceRoot":""}
