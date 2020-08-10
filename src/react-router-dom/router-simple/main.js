@@ -26,7 +26,7 @@ export default class MainComponents extends React.Component {
 
         return (
             <Switch>
-                <Route path="/" component={HomeComponent} />
+                <Route exact path="/" component={HomeComponent} />
                 <Route path="/login" component={LoginComponent} />
                 <Route path="/register" component={RegisterComponent}/>
             </Switch>

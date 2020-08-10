@@ -1,16 +1,15 @@
 import React from 'react'
-import {Link, Redirect} from 'react-router-dom'
-
+import Header from './Header'
+import Body from './Body'
+import Footer from './Footer'
 
 export default class Home extends React.Component {
     render () {
         return (
             <>
-                <h3>Home</h3>
-                <ul>
-                    <li><Link to="/login">login</Link></li>
-                    <li><Link to="/register">register</Link></li>
-                </ul>
+                <Header />
+                <Body />
+                <Footer />
             </>
         )
     }
