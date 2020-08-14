@@ -18,8 +18,9 @@ export const Cookie = {
     },
 
     set(key, value, day) {
-        let setting = arguments[0];
-        if(Object.prototype.toString.call(setting).slice(8, -1) === 'Object') {
+        let setting = arguments[0],
+            tmp = Object.prototype.toString.call(setting);
+        if(tmp.slice(8, -1) === 'Object') {
             for(let i in setting) {
                 let oDate = new Date();
                 oDate.setDate(oDate.getDate + day)
@@ -50,8 +51,9 @@ export const Local = {
     },
 
     set(key, val) {
-        const setting = arguments[0];
-        if(Object.prototype.toString.call(setting).slice(8, -1) === 'Object') {
+        const setting = arguments[0],
+        tmp = Object.prototype.toString.call(setting);
+        if(tmp.slice(8, -1) === 'Object') {
             for(const i in setting) {
                 ls.setItem(i, JSON.stringify(setting[i]))
             }
@@ -75,8 +77,9 @@ export const Session = {
         return null
     },
     set(key, val) {
-        const setting = arguments[0]
-        if (Object.prototype.toString.call(setting).slice(8, -1) === 'Object') {
+        const setting = arguments[0],
+        tmp = Object.prototype.toString.call(setting);
+        if(tmp.slice(8, -1) === 'Object') {
             for (const i in setting) {
                 ss.setItem(i, JSON.stringify(setting[i]))
             }

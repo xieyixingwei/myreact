@@ -1,35 +1,31 @@
 import { ADD_TODO, SUB_TODO, MUT_TODO, DIV_TODO, SQR_TODO } from './Actions.js';
-import { handleActions } from 'redux-actions';
 
-const initState = {operator: "", result: 0};
+export default (state = {operator: "", result: 0}, action) => {
+    let a = 0,
+        b = 0;
 
-export const Reducer = handleActions(
-    {
-        ADD_TODO: (state, action) => {
-            let {a, b} = action.payload;
+    switch(action.type) {
+        case ADD_TODO:
+            ({a, b} = action.payload);
             return {operator: "add", result:a + b};
-        },
 
-        SUB_TODO: (state, action) => {
-            let {a, b} = action.payload;
+        case SUB_TODO:
+            ({a, b} = action.payload);
             return {operator: "sub", result:a - b};
-        },
 
-        MUT_TODO: (state, action) => {
-            let {a, b} = action.payload;
+        case MUT_TODO:
+            ({a, b} = action.payload);
             return {operator: "mut", result:a * b};
-        },
 
-        DIV_TODO: (state, action) => {
-            let {a, b} = action.payload;
+        case DIV_TODO:
+            ({a, b} = action.payload);
             return {operator: "div", result:a / b};
-        },
 
-        SQR_TODO: (state, action) => {
+        case SQR_TODO:
             let x = action.payload;
-            return {operator: "sqr", result: x*x};
-        },
-    },
+            return {operator: "sqrt", result: x * x};;
 
-    initState
-)
+        default:
+            return state;
+    }
+};
